@@ -1,12 +1,16 @@
 "use strict";
 
-import Movie from "../models/movie.js";
+import db from "../models/index.js";
 
 const controller = {
   get: async (req, res) => {
-    // const movie = Movie.build({ title: "Pulp Fiction", sinopsis: "lkldlsdkslksdkfls" });
+    const movies = await db.movie.findAll({
+      where: {},
+      include: "director",
+    });
 
-    const movies = await Movie.findAll();
+    // if (movies.lenght == 0) return res.status(404).send({ message: "Movie not found" });
+
     return res.status(200).send(movies);
   },
 };

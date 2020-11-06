@@ -1,28 +1,33 @@
 "use strict";
 
-import Sequelize from "sequelize";
+const model = (sequelize, DataTypes) => {
+  const Movie = sequelize.define("Movie", {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    genre: {
+      type: DataTypes.STRING,
+    },
+    language: {
+      type: DataTypes.STRING,
+    },
+    synopsis: {
+      type: DataTypes.TEXT,
+    },
+  });
 
-const sequelize = new Sequelize("sqlite::memory");
+  Movie.associate = function (models) {
+    Movie.belongsTo(models.person, {
+      as: "director",
+      foreignKey: "directorId",
+    });
 
-const Movie = sequelize.define("Movie", {
-  identifier: { type: Sequelize.STRING, primaryKey: true },
-  id: {
-    type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV4,
-  },
-  title: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  sinopsis: {
-    type: Sequelize.TEXT,
-  },
-});
+    Movie.belongsToMany(models.person, { through: "ActorMovies" });
+  };
 
-(async () => {
-  await sequelize.sync({ force: true });
-  await Movie.create({ title: "Pulp Fiction", sinopsis: "lkldlsdkslksdkfls" });
-  await Movie.create({ title: "Reservoir Dogs", sinopsis: "asasasasasas" });
-})();
+  return Movie;
+};
 
-export default Movie;
+export default model;
