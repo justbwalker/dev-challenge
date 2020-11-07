@@ -17,10 +17,10 @@ app.use(urlencoded({ extended: false }));
 app.use(json());
 
 // Set up the routes
-app.use("/api", movieRoutes);
-app.use("/api", tvShowRoutes);
-app.use("/api", actorRoutes);
-app.use("/api", directorRoutes);
-app.use("/api", authRoutes);
+app.use("/api/movies", movieRoutes);
+app.use("/api/tv-shows", tvShowRoutes);
+app.use("/api/actors", actorRoutes);
+app.use("/api/directors", directorRoutes);
+app.use("/api/auth", authRoutes);
 
 export default app;

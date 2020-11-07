@@ -11,6 +11,7 @@ import user from "./user.js";
 
 let sequelize = new Sequelize("sqlite::memory:");
 
+// Append models to database
 const db = {
   movie: movie(sequelize, Sequelize.DataTypes),
   person: person(sequelize, Sequelize.DataTypes),
@@ -20,6 +21,7 @@ const db = {
   user: user(sequelize, Sequelize.DataTypes),
 };
 
+// Create relationships
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
@@ -36,6 +38,7 @@ db.initialize = async () => {
   const patten = await db.person.create({ name: "Tim Van Patten" });
   await db.movie.create({
     title: "Reservoir Dogs",
+    genre: "Drama",
     synopsis:
       "Seis criminales profesionales son contratados para robar en un almacén de diamantes, pero la policía aparece inesperadamente en el momento del atraco. Algunos miembros de la banda mueren en el enfrentamiento y otros logran huir, reagrupándose en un almacén y dispuestos a descubrir quién los delató.",
     language: "Ingles",

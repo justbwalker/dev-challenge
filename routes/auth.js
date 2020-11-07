@@ -5,8 +5,10 @@ import authController from "../controllers/auth.js";
 
 const router = express.Router();
 
-router.post("/auth/login", authController.login);
+// Login with username and password
+router.post("/login", authController.login);
 
-router.post("/auth/refresh", authController.refresh);
+// Refresh token
+router.post("/refresh", authController.refresh);
 
 export default router;

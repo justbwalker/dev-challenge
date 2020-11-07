@@ -3,6 +3,7 @@
 import db from "../models/index.js";
 
 const controller = {
+  // Get actors, could be filtered and ordered by a field
   getActors: async (req, res) => {
     const { "sort-by": sortBy, ...where } = req.query;
 
@@ -18,6 +19,7 @@ const controller = {
       return res.status(404).send({ message: "Actors not found" });
     }
   },
+  // Save an actor
   saveActor: async (req, res) => {
     try {
       console.log(req);

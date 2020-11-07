@@ -3,19 +3,17 @@
 import db from "../models/index.js";
 
 const controller = {
+  // Get tv shows, could be filtered and ordered by a field
   get: async (req, res) => {
     const { sort_by: sortBy, ...where } = req.query;
-    console.log(sortBy);
 
-    const movies = await db.movie.findAll({
-      where,
-      order: [sortBy],
-      include: "director",
-    });
+    const options = {};
+    if (where) options.where = where;
+    if (sortBy) options.order = [sortBy];
 
-    // if (movies.lenght == 0) return res.status(404).send({ message: "Movie not found" });
+    const tvShows = await db.tvShow.findAll(options);
 
-    return res.status(200).send(movies);
+    return res.status(200).send(tvShows);
   },
 };
 

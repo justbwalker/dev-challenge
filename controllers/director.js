@@ -3,6 +3,7 @@
 import db from "../models/index.js";
 
 const controller = {
+  // Get directors, could be filtered and ordered by a field
   getDirectors: async (req, res) => {
     const { "sort-by": sortBy, ...where } = req.query;
 

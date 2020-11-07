@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import db from "../models/index.js";
 
 const controller = {
+  // Login with username and password
   login: async (req, res) => {
     const { username, password } = req.body;
     if (!username) {
@@ -18,6 +19,7 @@ const controller = {
     const user = await db.user.findByPk(username);
 
     if (user) {
+      // Check password
       if (user.password === password) {
         const payload = {
           username,
@@ -36,8 +38,10 @@ const controller = {
       return res.status(404).send({ message: "User not found" });
     }
   },
+  // Refresh token
   refresh: async (req, res) => {
     try {
+      // Check roken
       const payload = jwt.verify(req.body.token, "dEvChaLleNGe");
       if (payload) {
         delete payload.iat;

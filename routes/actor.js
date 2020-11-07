@@ -5,8 +5,10 @@ import actorController from "../controllers/actor.js";
 
 const router = express.Router();
 
-router.get("/actors", actorController.getActors);
+// Get actors, could be filtered and ordered by a field
+router.get("/", actorController.getActors);
 
-router.post("/actors", actorController.saveActor);
+// Save an actor
+router.post("/", actorController.saveActor);
 
 export default router;
