@@ -18,8 +18,12 @@ const model = (sequelize, DataTypes) => {
     },
   });
 
+  // Create relationships
   Person.associate = function (models) {
+    // A person could appear in many movies
     Person.belongsToMany(models.movie, { through: "ActorMovies" });
+
+    // A person could appear in many tv shows
     Person.belongsToMany(models.tvShow, { through: "ActorTvShows" });
   };
 

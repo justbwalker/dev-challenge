@@ -18,13 +18,9 @@ const model = (sequelize, DataTypes) => {
     },
   });
 
+  // Create relationships
   TvShow.associate = function (models) {
-    // associations can be defined here
-    TvShow.belongsTo(models.person, {
-      as: "director",
-      foreignKey: "directorId",
-    });
-
+    // A tv show could have many actors
     TvShow.belongsToMany(models.person, { through: "ActorTvShows" });
   };
 

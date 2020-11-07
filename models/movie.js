@@ -18,12 +18,15 @@ const model = (sequelize, DataTypes) => {
     },
   });
 
+  // Create relationships
   Movie.associate = function (models) {
+    // A movie belongs to a director
     Movie.belongsTo(models.person, {
       as: "director",
       foreignKey: "directorId",
     });
 
+    // A movie could have many actors
     Movie.belongsToMany(models.person, { through: "ActorMovies" });
   };
 

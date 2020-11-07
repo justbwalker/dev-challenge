@@ -13,8 +13,12 @@ const model = (sequelize, DataTypes) => {
     },
   });
 
+  // Create relationships
   Season.associate = function (models) {
-    Season.belongsTo(models.tvShow);
+    // A season belongs to a tv show
+    Season.belongsTo(models.tvShow, {
+      foreignKey: "tvShowId",
+    });
   };
 
   return Season;

@@ -3,9 +3,13 @@
 import db from "../models/index.js";
 
 const controller = {
-  get: async (req, res) => {
+  getMovies: async (req, res) => {
+    const { "sort-by": sortBy, ...where } = req.query;
+    console.log(sortBy);
+
     const movies = await db.movie.findAll({
-      where: {},
+      where,
+      order: [sortBy],
       include: "director",
     });
 

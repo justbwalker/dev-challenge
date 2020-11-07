@@ -16,8 +16,18 @@ const model = (sequelize, DataTypes) => {
     },
   });
 
+  // Create relationships
   Episode.associate = function (models) {
-    Episode.belongsTo(models.season);
+    // An episode belons to a season
+    Episode.belongsTo(models.season, {
+      foreignKey: "seasonId",
+    });
+
+    // An episode belons to a director
+    Episode.belongsTo(models.person, {
+      as: "director",
+      foreignKey: "directorId",
+    });
   };
 
   return Episode;
