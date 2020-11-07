@@ -21,82 +21,82 @@ npm start
 
 ```json
 [
-{
-id: 1,
-title: "Reservoir Dogs",
-genre: null,
-language: "Ingles",
-synopsis: "Seis criminales profesionales son contratados para robar en un almacén de diamantes, pero la policía aparece inesperadamente en el momento del atraco. Algunos miembros de la banda mueren en el enfrentamiento y otros logran huir, reagrupándose en un almacén y dispuestos a descubrir quién los delató.",
-createdAt: "2020-11-07T14:38:06.558Z",
-updatedAt: "2020-11-07T14:38:06.558Z",
-directorId: 1,
-director: {
-id: 1,
-name: "Quentin Tarantino",
-gender: null,
-birthdate: null,
-biography: null,
-createdAt: "2020-11-07T14:38:06.527Z",
-updatedAt: "2020-11-07T14:38:06.527Z"
-}
-},
-{
-id: 2,
-title: "Pulp Fiction",
-genre: null,
-language: "Ingles",
-synopsis: "La vida de un boxeador, dos sicarios, la esposa de un gánster y dos bandidos se entrelaza en una historia de violencia y redención.",
-createdAt: "2020-11-07T14:38:06.560Z",
-updatedAt: "2020-11-07T14:38:06.560Z",
-directorId: 1,
-director: {
-id: 1,
-name: "Quentin Tarantino",
-gender: null,
-birthdate: null,
-biography: null,
-createdAt: "2020-11-07T14:38:06.527Z",
-updatedAt: "2020-11-07T14:38:06.527Z"
-}
-},
-{
-id: 3,
-title: "Todo sobre mi madre",
-genre: null,
-language: "Español",
-synopsis: "Una madre soltera reaviva viejas relaciones y hace nuevas a su regreso a Barcelona buscando al padre de su hijo muerto.",
-createdAt: "2020-11-07T14:38:06.562Z",
-updatedAt: "2020-11-07T14:38:06.562Z",
-directorId: 2,
-director: {
-id: 2,
-name: "Pedro Almodobar",
-gender: null,
-birthdate: null,
-biography: null,
-createdAt: "2020-11-07T14:38:06.552Z",
-updatedAt: "2020-11-07T14:38:06.552Z"
-}
-},
-{
-id: 4,
-title: "Mujeres al borde de un ataque de nervios",
-genre: null,
-language: "Español",
-synopsis: "Una mujer inestable que busca a su ex amante se encuentra con caos cuando un diverso grupo de extraños entra en su vida.",
-createdAt: "2020-11-07T14:38:06.563Z",
-updatedAt: "2020-11-07T14:38:06.563Z",
-directorId: 2,
-director: {
-id: 2,
-name: "Pedro Almodobar",
-gender: null,
-birthdate: null,
-biography: null,
-createdAt: "2020-11-07T14:38:06.552Z",
-updatedAt: "2020-11-07T14:38:06.552Z"
-}
-}
+    {
+        id: 1,
+        title: "Reservoir Dogs",
+        genre: "Drama",
+        language: "Ingles",
+        synopsis: "Seis criminales profesionales son contratados para robar en un almacén de diamantes, pero la policía aparece inesperadamente en el momento del atraco. Algunos miembros de la banda mueren en el enfrentamiento y otros logran huir, reagrupándose en un almacén y dispuestos a descubrir quién los delató.",
+        createdAt: "2020-11-07T14:59:49.487Z",
+        updatedAt: "2020-11-07T14:59:49.487Z",
+        directorId: 1,
+        director: {
+            id: 1,
+            name: "Quentin Tarantino",
+            gender: null,
+            birthdate: null,
+            biography: null,
+            createdAt: "2020-11-07T14:59:49.460Z",
+            updatedAt: "2020-11-07T14:59:49.460Z"
+        }
+    },
+    {
+        id: 2,
+        title: "Pulp Fiction",
+        genre: null,
+        language: "Ingles",
+        synopsis: "La vida de un boxeador, dos sicarios, la esposa de un gánster y dos bandidos se entrelaza en una historia de violencia y redención.",
+        createdAt: "2020-11-07T14:59:49.489Z",
+        updatedAt: "2020-11-07T14:59:49.489Z",
+        directorId: 1,
+        director: {
+            id: 1,
+            name: "Quentin Tarantino",
+            gender: null,
+            birthdate: null,
+            biography: null,
+            createdAt: "2020-11-07T14:59:49.460Z",
+            updatedAt: "2020-11-07T14:59:49.460Z"
+        }
+    },
+    {
+        id: 3,
+        title: "Todo sobre mi madre",
+        genre: null,
+        language: "Español",
+        synopsis: "Una madre soltera reaviva viejas relaciones y hace nuevas a su regreso a Barcelona buscando al padre de su hijo muerto.",
+        createdAt: "2020-11-07T14:59:49.509Z",
+        updatedAt: "2020-11-07T14:59:49.509Z",
+        directorId: 2,
+        director: {
+            id: 2,
+            name: "Pedro Almodobar",
+            gender: null,
+            birthdate: null,
+            biography: null,
+            createdAt: "2020-11-07T14:59:49.482Z",
+            updatedAt: "2020-11-07T14:59:49.482Z"
+        }
+    },
+    {
+        id: 4,
+        title: "Mujeres al borde de un ataque de nervios",
+        genre: null,
+        language: "Español",
+        synopsis: "Una mujer inestable que busca a su ex amante se encuentra con caos cuando un diverso grupo de extraños entra en su vida.",
+        createdAt: "2020-11-07T14:59:49.512Z",
+        updatedAt: "2020-11-07T14:59:49.512Z",
+        directorId: 2,
+        director: {
+            id: 2,
+            name: "Pedro Almodobar",
+            gender: null,
+            birthdate: null,
+            biography: null,
+            createdAt: "2020-11-07T14:59:49.482Z",
+            updatedAt: "2020-11-07T14:59:49.482Z"
+        }
+    }
 ]
 ```
 
