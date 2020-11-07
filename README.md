@@ -19,7 +19,7 @@ npm start
 
 * Now if you go to [http://localhost:3030/api/movies](http://localhost:3030/api/movies), you'll get
 
-```json
+```
 [
     {
         id: 1,
